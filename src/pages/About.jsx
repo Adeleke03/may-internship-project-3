@@ -32,8 +32,8 @@ const About = () => {
           </ul>
           {/* div for social icons */}
      <div className='text-[#D3E97A] flex items-center gap-5 py-6  text-[32px]'>
-      <ion-icon name="logo-linkedin"></ion-icon>
-      <ion-icon name="logo-github"></ion-icon>
+      <a target='blank' href="https://www.linkedin.com/in/jephthah-adeleke-a9207732b/"><ion-icon name="logo-linkedin"></ion-icon></a>
+      <a target='blank' href="https://github.com/Adeleke03/"><ion-icon name="logo-github"></ion-icon></a>
    
      </div>
       </div>

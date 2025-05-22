@@ -18,7 +18,7 @@ const Navbar = () => {
 
         {/* Desktop menu */}
         <ul className="md:flex gap-[32px] hidden tracking-[-3%] text-[16px] font-Inter">
-          <li><a href="#">Work</a></li>
+          <Link to="/"><li><a href="#">Work</a></li></Link>
           <Link to="about" ><li><a href="#">About</a></li>
           </Link>
           <Link to="contact" ><li><a href="#">Contact</a></li></Link>
@@ -39,7 +39,7 @@ const Navbar = () => {
       {menuOpen && (
         <div className="md:hidden bg-black px-4 pb-4 text-[#C7C7C7] font-Inter text-[16px]">
           <ul className="flex flex-col gap-4 items-center">
-            <li><a href="#" onClick={() => setMenuOpen(false)}>Work</a></li>
+            <Link to="/"><li><a href="#" onClick={() => setMenuOpen(false)}>Work</a></li></Link>
             <Link to="about"><li><a href="#" onClick={() => setMenuOpen(false)}>About</a></li></Link>
             <Link to="contact"><li><a href="#" onClick={() => setMenuOpen(false)}>Contact</a></li></Link>
           </ul>

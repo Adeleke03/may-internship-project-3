@@ -12,7 +12,24 @@ const Contact = () => {
   } = useForm({
     resolver: yupResolver(contactSchema),
   });
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = async (data) => {
+  try {
+    const response = await fetch("https://formspree.io/f/mnndyzvw", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+
+    if (response.ok) {
+      alert("Message sent successfully!");
+      reset();
+    } else {
+      alert("Something went wrong. Please try again.");
+    }
+  } catch (error) {
+    alert("Network error.");
+  }
+};
   return (
     <>
       <main className="wrapper bg-black text-white ">
@@ -34,16 +51,26 @@ const Contact = () => {
             </p>
             {/* div for social icons */}
             <div className="text-[#D3E97A] flex items-center gap-5 py-6  text-[32px]">
-              <ion-icon name="logo-linkedin"></ion-icon>
-              <ion-icon name="logo-github"></ion-icon>
+              <a
+                href="https://www.linkedin.com/in/jephthah-adeleke-a9207732b/"
+                target="blank"
+              >
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+              <a href="https://github.com/Adeleke03/" target="blank">
+                <ion-icon name="logo-github"></ion-icon>
+              </a>
+              <a href="https://x.com/x_rxxc?s=21" target="blank"></a>
               <ion-icon name="logo-twitter"></ion-icon>
+              <a href="https://www.instagram.com/" target="blank"></a>
               <ion-icon name="logo-instagram"></ion-icon>
             </div>
           </section>
           {/* footer form section */}
           <section className="lg:w-[600px]">
             <form
-              action=""
+              action="https://formspree.io/f/mnndyzvw"
+              method="POST"
               onSubmit={handleSubmit(onSubmit)}
               className="leading-[160%] font-[500] flex flex-col gap-[10px] "
             >
@@ -93,7 +120,11 @@ const Contact = () => {
                 />
                 <p className="text-red-600">{errors.message?.message}</p>
               </div>
-              <button className="block bg-[#D3E97A] text-black p-4 rounded-full leading-[100%] font-[700] w-[140px] my-4 ">
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="block bg-[#D3E97A] text-black p-4 rounded-full leading-[100%] font-[700] w-[140px] my-4"
+              >
                 SUBMIT
               </button>
             </form>

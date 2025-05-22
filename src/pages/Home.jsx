@@ -1,6 +1,6 @@
 import React from 'react'
-import Hero from '../features/Hero'
-import Projects from '../features/projects'
+import Hero from '../features/Hero.jsx'
+import Projects from '../features/projects.jsx'
 
 const Home = () => {
   return (
