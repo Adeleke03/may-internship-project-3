@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import "tailwindcss";
+
+
+
+
+
+
+
+body {
+  max-width: 1600px;
+  margin: 0 auto;
+  font-family: "Manrope", sans-serif;
+
+}
+
+@theme {
+  --font-Bebas-Neue: "Bebas Neue", sans-serif;
+  --font-Inter: "Inter", sans-serif;
+}
+
+
+.wrapper{
+  @apply w-full  px-[14px] md:px-[40px] py-[10px] lg:px-[80px] xl:px-[80px] lg:py-[16px]   mx-auto 
+  /* @apply w-full mx-auto px-[20px] md:px-[40px] py-[10px] lg:px-[90px] xl:px-[130px] lg:py-[16px]; */
+
+}
